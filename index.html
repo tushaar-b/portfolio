@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tushaar Bharara — Developer & Engineer</title>
+  <meta name="description" content="Portfolio of Tushaar Bharara — CSE student at VIT, full-stack developer, robotics enthusiast, and creative engineer bridging software and the physical world.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-logo">TB</div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+      <p class="loader-text" id="loader-text">Initializing...</p>
+    </div>
+  </div>
+
+  <!-- Three.js Canvas (background) -->
+  <canvas id="bg-canvas"></canvas>
+  <!-- Three.js Character Canvas -->
+  <canvas id="char-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">TB<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+        <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+        <li><a href="#courses" class="nav-link" data-text="Courses">Courses</a></li>
+        <li><a href="#writing" class="nav-link" data-text="Writing">Writing</a></li>
+        <li><a href="#resume" class="nav-link" data-text="Resume">Resume</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#courses" class="mobile-link">Courses</a>
+    <a href="#writing" class="mobile-link">Writing</a>
+    <a href="#resume" class="mobile-link">Resume</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">CSE @ VIT · Data Science</div>
+        <h1 class="hero-title">
+          <span class="reveal-up delay-1">Hi, I'm</span>
+          <br>
+          <span class="hero-name reveal-up delay-2">Tushaar<br>Bharara<span class="accent-dot">.</span></span>
+        </h1>
+        <p class="hero-sub reveal-up delay-3">
+          Developer · Builder · Engineer
+        </p>
+        <p class="hero-desc reveal-up delay-4">
+          Bridging the gap between software and the physical world through full-stack web apps, robotics, and machine learning.
+        </p>
+        <div class="hero-ctas reveal-up delay-5">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#about" class="btn-ghost">About Me</a>
+        </div>
+        <div class="hero-scroll-hint reveal-up delay-6">
+          <span>Scroll to explore</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+      <!-- 3D Character -->
+      <div class="hero-char-wrap reveal-right" id="hero-char-wrap">
+        <div class="char-platform-label">
+          <span class="char-name-tag">Tushaar Bharara</span>
+          <span class="char-role-tag">CSE · VIT · Data Science</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="section-inner">
+        <div class="section-label reveal-up">/ About Me</div>
+        <div class="about-grid">
+          <div class="about-text-col">
+            <h2 class="section-h2 reveal-up">Passionate about building things that <span class="gradient-text">matter</span>.</h2>
+            <p class="about-body reveal-up">
+              I am currently a first-year B.Tech student in Computer Science and Engineering with a
+              specialization in Data Science at Vellore Institute of Technology (VIT). I am a passionate
+              developer and problem-solver with a deep interest in bridging the gap between software and the
+              physical world.
+            </p>
+            <p class="about-body reveal-up">
+              My technical journey is driven by a love for building — whether it's developing full-stack web
+              applications using the MERN stack, programming Arduino and Raspberry Pi for robotics, or diving
+              into the complexities of Machine Learning and Data Structures. I am particularly drawn to
+              creating technology that has a real-world impact.
+            </p>
+            <div class="about-stats reveal-up">
+              <div class="stat-item">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">2025</span>
+                <span class="stat-label">Started at VIT</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Things to Build</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-skills-col reveal-right">
+            <div class="skills-panel card-3d">
+              <h3 class="skills-title">Tech Stack</h3>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <span>JavaScript / Node.js</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <span>React / MERN</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <span>C / C++ / Python</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <span>Arduino / Raspberry Pi</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <span>Machine Learning</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <span>DSA / Algorithms</span>
+                  <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="section-inner">
+        <div class="section-label reveal-up">/ My Work</div>
+        <h2 class="section-h2 reveal-up">Projects that push <span class="gradient-text">boundaries</span>.</h2>
+        <div class="projects-grid">
+
+          <div class="project-card card-3d reveal-up">
+            <div class="project-img-wrap">
+              <img src="assets/IMG_4755.jpg" alt="Multi Terrain Rover">
+              <div class="project-img-overlay"></div>
+              <div class="project-date-badge">Sep 2025</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Multi Terrain Rover</h3>
+              <p class="project-desc">A disaster-rescue rover built on Raspberry Pi and Arduino Uno. Features sensors for detecting invisible fires and terrain instability, plus a custom camera module with live footage relay for object detection. Designed to make areas inaccessible to humans reachable during calamities.</p>
+              <div class="project-tags">
+                <span class="tag">Raspberry Pi</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Robotics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card card-3d reveal-up delay-1">
+            <div class="project-img-wrap">
+              <img src="assets/Screenshot%202026-03-28%20at%209.47.19%20PM.png" alt="CAE Laminate Solver">
+              <div class="project-img-overlay"></div>
+              <div class="project-date-badge">Jan 2026</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CAE Laminate Solver</h3>
+              <p class="project-desc">A specialized computational engine for analyzing the structural behavior of composite materials using Classical Laminate Theory. Calculates laminate stiffness and material selection indices with an AI-driven recommendation engine.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI/ML</span>
+                <span class="tag">Materials Science</span>
+              </div>
+              <a href="https://tushaar-b.github.io/project1/" target="_blank" class="project-link">View Project <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="project-card card-3d reveal-up delay-2">
+            <div class="project-img-wrap">
+              <img src="assets/Screenshot%202026-03-28%20at%209.54.35%20PM.png" alt="Mess Management System">
+              <div class="project-img-overlay"></div>
+              <div class="project-date-badge">Mar 2026</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Mess Management System</h3>
+              <p class="project-desc">A platform tackling the problem of long queues at paid messes. Students can pre-order meals and pick them up without waiting in line, eliminating missed or late meals at VIT.</p>
+              <div class="project-tags">
+                <span class="tag">MERN Stack</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">UX Design</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section courses-section">
+      <div class="section-inner">
+        <div class="section-label reveal-up">/ Academic Focus</div>
+        <h2 class="section-h2 reveal-up">Important <span class="gradient-text">Classes</span>.</h2>
+        <div class="courses-grid">
+
+          <div class="course-card card-3d reveal-up">
+            <div class="course-img-wrap">
+              <img src="assets/dsa.png" alt="Data Structures & Algorithms">
+            </div>
+            <div class="course-number">01</div>
+            <h3 class="course-title">Data Structures & Algorithms</h3>
+            <p class="course-desc">Rigorous study of efficient algorithms and complex data structures — graph theory, combinatorics, logic — with a focus on C++. Applied Dijkstra's algorithm for pathfinding and Prim's/Kruskal's for network optimization in real-world scenarios.</p>
+            <div class="course-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Graph Theory</span>
+              <span class="tag">Discrete Math</span>
+            </div>
+          </div>
+
+          <div class="course-card card-3d reveal-up delay-1">
+            <div class="course-img-wrap">
+              <img src="assets/course_uiux.png" alt="Modern UI/UX Design">
+            </div>
+            <div class="course-number">02</div>
+            <h3 class="course-title">Modern UI/UX Design & Frontend Systems</h3>
+            <p class="course-desc">In-depth study of how systems interact with users. Wireframing & Prototyping in Figma, Performance Optimization, Accessibility & Responsiveness with a mobile-first mindset — applied to curate beautiful yet practical web applications.</p>
+            <div class="course-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">React</span>
+              <span class="tag">MERN</span>
+            </div>
+          </div>
+
+          <div class="course-card card-3d reveal-up delay-2">
+            <div class="course-img-wrap">
+              <img src="assets/c-17-02.jpg" alt="OOP">
+            </div>
+            <div class="course-number">03</div>
+            <h3 class="course-title">Structured & Object-Oriented Programming</h3>
+            <p class="course-desc">Transition from procedural to blueprint-based software development. Mastery of OOP pillars — Encapsulation, Abstraction, Inheritance, Polymorphism — building fault-tolerant, reusable systems in C++ and Python.</p>
+            <div class="course-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">OOP</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing" class="section writing-section">
+      <div class="section-inner">
+        <div class="section-label reveal-up">/ Creative Work</div>
+        <h2 class="section-h2 reveal-up">Beyond the <span class="gradient-text">code</span>.</h2>
+        <div class="writing-card card-3d reveal-up">
+          <div class="writing-img-col">
+            <img src="assets/IMG_4756.jpg" alt="Echoes Of Mystery Book Cover" class="writing-img">
+          </div>
+          <div class="writing-text-col">
+            <div class="writing-genre-badge">Mythological Thriller</div>
+            <h3 class="writing-title">Echoes Of Mystery</h3>
+            <p class="writing-body">
+              Though not related to my work profile, it is one publication I am very proud of. It
+              displays my passion for writing during the time I'm not coding. This story captures the
+              divine powers of the state of Uttarakhand and how the dead can still speak. Inspired by true
+              events, it's an exciting mythological thriller that blurs the line between the living and the beyond.
+            </p>
+            <a href="https://docs.google.com/document/d/1s4yTl_n3l5zBgLIFW4spaZk9e49ocU7n/edit?usp=drivesdk&ouid=108816280435637856453&rtpof=true&sd=true"
+              target="_blank" class="btn-primary writing-btn">
+              Read The Book <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section">
+      <div class="section-inner">
+        <div class="section-label reveal-up">/ My Background</div>
+        <h2 class="section-h2 reveal-up">Resume <span class="gradient-text">Overview</span>.</h2>
+        <div class="resume-grid">
+          <div class="resume-sidebar reveal-up">
+            <div class="resume-avatar-wrap card-3d">
+              <img src="assets/1768060602202.jpeg" alt="Tushaar Bharara" class="resume-avatar">
+            </div>
+            <div class="resume-contact-card glass-card">
+              <h4>Contact</h4>
+              <p>📍 Vellore, Tamil Nadu</p>
+              <p>✉️ tushaar.bharara@gmail.com</p>
+              <a href="https://www.linkedin.com/in/tushaar-bharara-318ba12a1" target="_blank" class="resume-linkedin">LinkedIn Profile →</a>
+            </div>
+          </div>
+          <div class="resume-main">
+
+            <div class="resume-block reveal-up">
+              <div class="resume-block-header">
+                <div class="resume-block-icon">👤</div>
+                <h3>About Me</h3>
+              </div>
+              <p>First-year undergraduate in B.Tech Computer Science & Engineering (Data Science). A passionate developer and problem solver with a strong interest in bridging the physical and digital worlds.</p>
+            </div>
+
+            <div class="resume-block reveal-up delay-1">
+              <div class="resume-block-header">
+                <div class="resume-block-icon">🔬</div>
+                <h3>Research Interests</h3>
+              </div>
+              <ul class="resume-list">
+                <li>Machine Learning & Data Science</li>
+                <li>Full-Stack Web Development (MERN)</li>
+                <li>Robotics (Arduino, Raspberry Pi)</li>
+                <li>Data Structures & Algorithms</li>
+              </ul>
+            </div>
+
+            <div class="resume-block reveal-up delay-2">
+              <div class="resume-block-header">
+                <div class="resume-block-icon">🎓</div>
+                <h3>Education</h3>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h4>B.Tech — CS & Engineering (Data Science)</h4>
+                  <p>Vellore Institute of Technology · 2025 – 2029</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block reveal-up delay-3">
+              <div class="resume-block-header">
+                <div class="resume-block-icon">🏆</div>
+                <h3>Honors & Awards</h3>
+              </div>
+              <ul class="resume-list">
+                <li>Finalist — Devjams 2025</li>
+              </ul>
+            </div>
+
+            <div class="resume-block reveal-up delay-4">
+              <div class="resume-block-header">
+                <div class="resume-block-icon">🎵</div>
+                <h3>Hobbies & Activities</h3>
+              </div>
+              <p>Robotics · Music (Music Club, VIT) · Reading · Writing (<em>Echoes Of Mystery</em>) · Travelling</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- Libraries via importmap (pure ES module, no global/module conflicts) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
